@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Lab 1: Introduction to HTML and CSS">
+
+<link rel="stylesheet" href="css/style.css">
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+</nav>
+<header>
+    <h1>Mario Musat </h1>
+</header>
+
+<main>
+    <body>
+        <script>
+            //alert("Hello world!");
+        </script>
+        <section>
+            <h2>About:</h2>
+            <aside class = "bio">
+                <p>In the Age of Ancients the world was unformed, shrouded by fog. A land of gray crags, Archtrees and Everlasting Dragons. But then there was Fire and with fire came disparity. Heat and cold, life and death, and of course, light and dark.</p>
+            </aside>
+            <image class = "pfp" src="hell.webp" width="200" height="200"></image>
+            
+        </section>
+
+        <br>
+
+        
+
+        <section>
+            <aside class = "personalInfo">
+            <h2>Personal Information:</h2>
+            <p>Name: Mario</p>
+            <p>Age: 20</p>
+            <p>Hobbies: Playing guitar, tinkering</p>
+        </aside>
+            <ol><h2>Education:</h2></ol>
+                <li>2020-2024: Mihai Eminescu high school, Buzau</li>
+                <br>
+                <li>2024-2028: Faculty of Computer Science, University of Brasov (unemployed/somer)</li>
+            </ol>
+        </section>
+
+        <footer>
+            <p>Copyright &copy; 2024 Mario</p>
+            <p>Contact: mario@example.com</p>
+
+            <form>
+                <p>Trimite mesaj:</p>
+                <label for="name">Nume:</label>
+                <input type="text" id="name" name="Name" placeholder="Enter your name">
+                <br>
+                <label for="email">Mail:</label>
+                <input type="email" id="email" name="Email" placeholder="Enter your email">
+                <br>
+                <label for="message">Mesaj:</label>
+                <textarea id="message" name="Message" placeholder="Enter your message"></textarea>
+                <button type="button" onclick="submitForm()">Trimite</button>
+
+                <script src = "js/contact_form.js"></script>
+            </form>
+        </footer>
+    </body>
+    
+</main>
+

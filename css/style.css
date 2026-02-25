@@ -1,0 +1,30 @@
+aside.personalInfo {
+  width: 40%;
+  padding-left: 0.5rem;
+  margin-left: 0.5rem;
+  float: right;
+  box-shadow: inset 5px 0 5px -5px #29627e;
+  font-style: italic;
+  color: #29627e;
+}
+
+aside > p {
+  margin: 0.5rem;
+}
+
+image.pfp{
+  border-radius: 50%;
+  width: 50%;
+  height: 50%;
+  float: right;
+}
+
+aside.bio{
+  p{
+    width: 50%;
+    margin-left: 0.5rem;
+    float: right;
+    font-style: italic;
+  }
+  
+}
