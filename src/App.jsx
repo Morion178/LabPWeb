@@ -1,5 +1,6 @@
 import Card from './Card';
 import { useState } from 'react';
+import QuickNote from './QuickNote';
 const projects = [
   { title: "Proiect 1", description: "Pagina personala" },
   { title: "Proiect 2", description: "Calculator buget" },
@@ -21,6 +22,8 @@ function App() {
        <button style={{ margin: '5px' }} onClick={() => setCount(count + 1)}>+1</button>
        <button style={{ margin: '5px' }} onClick={() => setCount(count - 1)}>-1</button>
        <button style={{ margin: '5px' }} onClick={() => setCount(0)}>Reset</button>
+
+       <QuickNote />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-export default function Card(props) {
+function Card(props) {
     return (
         <div>
             <h3>{props.title}</h3>
@@ -6,3 +6,4 @@ export default function Card(props) {
         </div>
     );
 }
+export default Card;
