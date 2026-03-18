@@ -17,8 +17,10 @@ function App() {
       }
       )}
       <br></br>
-       <p>Ai apasat de {count} ori</p>
-       <button onClick={() => setCount(count + 1)}>Click</button>
+       <p>Contor: {count}</p>
+       <button style={{ margin: '5px' }} onClick={() => setCount(count + 1)}>+1</button>
+       <button style={{ margin: '5px' }} onClick={() => setCount(count - 1)}>-1</button>
+       <button style={{ margin: '5px' }} onClick={() => setCount(0)}>Reset</button>
     </div>
   );
 }
