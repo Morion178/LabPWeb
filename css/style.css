@@ -1,30 +1,51 @@
-aside.personalInfo {
-  width: 40%;
-  padding-left: 0.5rem;
-  margin-left: 0.5rem;
-  float: right;
-  box-shadow: inset 5px 0 5px -5px #29627e;
-  font-style: italic;
-  color: #29627e;
+#header{ 
+  background-color: #EDE8D0;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+#searchBtns{
+  display: flex;
+  align-self: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-right: 5%;
 }
 
-aside > p {
-  margin: 0.5rem;
+#row{
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 
-image.pfp{
-  border-radius: 50%;
-  width: 50%;
-  height: 50%;
-  float: right;
+#about{
+  background-color: #EDE8D0;
+  padding-left: 1rem;
+  margin-left: 1rem;
+  border-radius: 5px;
+  width: 95%;
+  height: 120%;
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 
-aside.bio{
-  p{
-    width: 50%;
-    margin-left: 0.5rem;
-    float: right;
-    font-style: italic;
-  }
-  
+#education1{
+  background-color: #EDE8D0;
+  padding-left: 1rem;
+  margin-left: 1rem;
+  border-radius: 5px;
+  width: 94%;
+  height: 120%;
+  align-self: right;
 }
+#education2{
+  background-color: #EDE8D0;
+  padding-left: 1rem;
+  margin-left: 1rem;
+  border-radius: 5px;
+  width: 94%;
+  height: 120%;
+  align-self: right;
+}
+
