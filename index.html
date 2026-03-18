@@ -1,112 +1,13 @@
-<!DOCTYPE html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Lab 1: Introduction to HTML and CSS">
-
-<link rel="stylesheet" href="css/style.css">
-
-<div id = "header">
-    <div style = "margin-left: 5%">
-        <h1 id = "greeting_text"></h1>
-        <p>Mario Musat </p>
-    </div>
-    <div id = "searchBtns">
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </div>
-</div>
-
-<br>
-
-<main>
-    <body>
-        <script>
-            //alert("Hello world!");
-        </script>
-        <div id = "row">
-            <div id = "about">
-                <div>
-                    <h2>About:</h2>
-                    <p>In the Age of Ancients the world was unformed, shrouded by fog. A land of gray crags, Archtrees and Everlasting Dragons. But then there was Fire and with fire came disparity. Heat and cold, life and death, and of course, light and dark.</p>
-                </div>
-                <image src="hell.webp" width="200" height="200" style="align-self: center;"></image>
-            </div>
-            <div id="education1">
-                <h2>Personal Information:</h2>
-                <p>Name: Mario</p>
-                <p>Age: 20</p>
-                <p>Hobbies: Playing guitar, tinkering</p>
-                <h2>Education:</h2>
-                <ol>
-                    <li>2016-2020: Primary School nr.11, Buzau</li>
-                    <br>
-                    <li>2020-2024: Mihai Eminescu high school, Buzau</li>
-                    <br>
-                    <li>2024-2028: Faculty of Computer Science, University of Brasov (unemployed/somer)</li>
-                </ol>
-                
-            </div>
-            
-        </div>
-
-        <br>
-        <br>
-        <br>
-        <br>
-
-        <div id = "row">
-            <div id = "about">
-                <form>
-                <h1>Trimite-mi un mesaj:</h1>
-                <p id = "response"></p>
-                <label for="name">Nume:</label>
-                <input type="text" id="name" name="Name" placeholder="Enter your name">
-                <br>
-                <label for="email">Mail:</label>
-                <input type="text" id="email" name="Email" placeholder="Enter your email">
-                <br>
-                <label for="message">Mesaj:</label>
-                <textarea id="message" name="Message" placeholder="Enter your message"></textarea>
-                <button type="button" onclick="submitForm()">Trimite</button>
-                
-            </form>
-            </div>
-            <div id="education2">
-                <h2>Personal Information:</h2>
-                <p>Name: Mario</p>
-                <p>Age: 20</p>
-                <p>Hobbies: Playing guitar, tinkering</p>
-                <h2>Education:</h2>
-                <ol>
-                    <li>2016-2020: Generala School nr.11, Buzau</li>
-                    <br>
-                    <li>2020-2024: Liceu Mihai Eminescu, Buzau</li>
-                    <br>
-                    <li>2024-2028: Licenta Calculatoare, University of Brasov (unemployed/somer)</li>
-                </ol>
-                
-            </div>
-            
-        </div>
-
-        <br>
-        <br>
-        <br>
-        <br>
-
-        <footer>
-            <p>Copyright &copy; 2026 Mario</p>
-            <p>Contact: mario@example.com</p>
-
-            
-        </footer>
-        <script src = "js/contact_form.js"></script>
-        <script src = "js/array.js"></script>
-        
-    </body>
-    
-</main>
-
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lab1</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
