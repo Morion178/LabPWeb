@@ -8,6 +8,7 @@ function App() {
   return (
 
     <div>
+      <Clk/>
       <h1>Dashboard</h1>
       {/* {projects.map(function (item, index) {
         return <Card key={index} title={item.title} description={item.description} />;

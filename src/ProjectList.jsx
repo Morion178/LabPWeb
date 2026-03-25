@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import Card from './Card';
-function ProjectList() 
-{
+function ProjectList() {
     const [projects, setProjects] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const [search, setSearch] = useState('');
     useEffect(function () {
         fetch('/data/projects.json')
             .then(function (response) {
@@ -12,16 +13,30 @@ function ProjectList()
             .then(function (data) {
                 setProjects(data.projects);
                 setLoading(false);
+            })
+            .catch(function (err) {
+                setError('Eroare la incarcarea datelor: ' + err.message);
+                setLoading(false);
             });
     }, []);
     if (loading) {
         return <p>Se incarca...</p>;
     }
+    if (error) {
+        return <p>{error}</p>
+    }
     return (
         <div>
+            <h3>Cauta proiecte:</h3>
+            <input
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+            />
             <h3>Proiecte</h3>
             {/* TODO: Afisati proiectele cu map() si componenta Card din Lab 4 */}
-            {projects.map(function (item) {
+            {projects.filter(function (p) {
+                return p.title.toLowerCase().includes(search.toLowerCase());
+            }).map(function (item) {
                 return <Card key={item.id} title={item.title} description={item.tech} />;
             })}
         </div>
