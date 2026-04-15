@@ -1,27 +1,18 @@
-import Card from './Card';
-import { useState } from 'react';
-import QuickNote from './QuickNote';
-import ProjectList from './ProjectList';
-
+import { BrowserRouter, Routes, Route } from 'react-router';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import Navbar from './Navbar';
+import Contact from './pages/Contact';
 function App() {
-  const [count, setCount] = useState(0);
-  return (
-
-    <div>
-      <Clk/>
-      <h1>Dashboard</h1>
-      {/* {projects.map(function (item, index) {
-        return <Card key={index} title={item.title} description={item.description} />;
-      })} */}
-      <ProjectList />
-      <br></br>
-       <p>Contor: {count}</p>
-       <button style={{ margin: '5px' }} onClick={() => setCount(count + 1)}>+1</button>
-       <button style={{ margin: '5px' }} onClick={() => setCount(count - 1)}>-1</button>
-       <button style={{ margin: '5px' }} onClick={() => setCount(0)}>Reset</button>
-
-       <QuickNote />
-    </div>
-  );
+ return (
+ <BrowserRouter>
+ <Navbar />
+ <Routes>
+ <Route path="/" element={<Home />} />
+ <Route path="/projects" element={<Projects />} />
+ <Route path="/contact" element={<Contact />} />
+ </Routes>
+ </BrowserRouter>
+ );
 }
 export default App;
