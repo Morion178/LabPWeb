@@ -21,8 +21,8 @@ const ContactForm = () => {
   };
 
   return (
-    <div style={{ padding: '20px', maxWidth: '400px'}}>
-      <h2>Contactează-ne</h2>
+    <div style={{ padding: '20px', maxWidth: '400px', margin: '0 auto' }}>
+      <h2 style={{ textAlign: 'center' }}>Contactează-ne</h2>
       
       <form onSubmit={handleSubmit}>
         {/* Input pentru Nume */}
