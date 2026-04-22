@@ -5,6 +5,7 @@ const PORT = 3000;
 app.get('/', function(req, res) {
  res.json({ message: 'Serverul functioneaza!' });
 });
+app.use(express.json());
 // Date (temporar in memorie, vom folosi MongoDB mai tarziu)
 const projects = [
  { id: 1, title: "Pagina Personala", tech: "HTML, CSS", done: true },
@@ -16,7 +17,7 @@ const projects = [
 app.get('/api/projects', function(req, res) {
  res.json(projects);
 });
-    
+
 // GET /api/projects - returneaza toate proiectele
 app.get('/api/projects/:id', function(req, res) {
  const project = projects.find(p => p.id === parseInt(req.params.id));
@@ -32,6 +33,36 @@ app.get('/api/stats', function(req, res) {
  const done = projects.filter(p => p.done).length;
  const pending = total - done;
  res.json({ total, done, pending });
+});
+// POST /api/projects - adauga un proiect nou
+app.post('/api/projects', function(req, res) {
+ const newProject = {
+ id: projects.length + 1,
+ title: req.body.title,
+ tech: req.body.tech,
+ done: req.body.done || false,
+ };
+ projects.push(newProject);
+ res.status(201).json(newProject);
+});
+// DELETE /api/projects/:id - sterge un proiect
+app.delete('/api/projects/:id', function(req, res) {
+    const index = projects.findIndex(p => p.id === parseInt(req.params.id));
+    if(index === -1) res.status(404).json({ error: 'Not found' })
+    else {
+        projects.splice(index, 1);
+        res.json({ message: 'Proiectul a fost sters' });
+    }
+})
+// PUT /api/projects/:id - actualizeaza un proiect
+app.put('/api/projects/:id', function(req, res) {
+    const project = projects.find(p => p.id === parseInt(req.params.id));
+    if(project) {
+        project.title = req.body.title;
+        project.tech = req.body.tech;
+        project.done = req.body.done;
+        res.json(project);
+    }
 });
 // Porneste serverul
 app.listen(PORT, function() {
