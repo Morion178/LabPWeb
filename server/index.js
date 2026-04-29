@@ -1,6 +1,18 @@
 const express = require('express');
 const app = express();
+const mongoose = require('mongoose');
 const PORT = 3000;
+
+// Conectare la MongoDB
+mongoose.connect('mongodb://localhost:27017/dashboard')
+ .then(function() {
+ console.log('Conectat la MongoDB!');
+ })
+ .catch(function(err) {
+ console.error('Eroare conectare MongoDB:', err);
+ });
+
+
 // Prima ruta: raspunde la GET /
 app.get('/', function(req, res) {
  res.json({ message: 'Serverul functioneaza!' });
