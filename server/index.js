@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const Project = require('./models/Project');
+const cors = require('cors');
+app.use(cors());
 const PORT = 3000;
 
 // Conectare la MongoDB
@@ -123,3 +125,5 @@ app.delete('/api/projects/:id', async function (req, res) {
 app.listen(PORT, function () {
     console.log('Server pornit pe http://localhost:' + PORT);
 });
+
+

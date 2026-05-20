@@ -1,12 +1,10 @@
-import { useState } from 'react';
+import { useState} from 'react';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-
   const [feedback, setFeedback] = useState('');
-
   const handleSubmit = (e) => {
     e.preventDefault(); 
 
