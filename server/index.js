@@ -112,15 +112,15 @@ app.delete('/api/projects/:id', async function (req, res) {
     }
 });
 // PUT /api/projects/:id - actualizeaza un proiect
-// app.put('/api/projects/:id', function(req, res) {
-//     const project = projects.find(p => p.id === parseInt(req.params.id));
-//     if(project) {
-//         project.title = req.body.title;
-//         project.tech = req.body.tech;
-//         project.done = req.body.done;
-//         res.json(project);
-//     }
-// });
+app.put('/api/projects/:id', async function (req, res) {
+    const project = await Project.findById(req.params.id);
+    if(project) {
+        project.title = req.body.title;
+        project.tech = req.body.tech;
+        project.done = req.body.done;
+        res.json(project);
+    }
+});
 // Porneste serverul
 app.listen(PORT, function () {
     console.log('Server pornit pe http://localhost:' + PORT);

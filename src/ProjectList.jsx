@@ -37,7 +37,9 @@ function ProjectList() {
             {projects.filter(function (p) {
                 return p.title.toLowerCase().includes(search.toLowerCase());
             }).map(function (item) {
-                return <Card key={item.id} title={item.title} description={item.tech} />;
+                return (
+                    <Card key={item._id} id={item._id} title={item.title} description={item.tech} />
+                );
             })}
         </div>
     );
