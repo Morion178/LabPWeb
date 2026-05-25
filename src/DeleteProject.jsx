@@ -1,7 +1,7 @@
 export default function DeleteProject({ id }) {
 
     async function handleDelete() {
-        
+        if (window.confirm('Sigur doriti sa stergeti acest proiect?')){
         try {
             await fetch(`http://localhost:3000/api/projects/${id}`, {
                 method: 'DELETE',
@@ -12,6 +12,7 @@ export default function DeleteProject({ id }) {
             console.error('Eroare:', err);
         }
         window.location.reload();
+    }
     }
 
     return (

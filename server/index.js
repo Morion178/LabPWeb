@@ -113,14 +113,19 @@ app.delete('/api/projects/:id', async function (req, res) {
 });
 // PUT /api/projects/:id - actualizeaza un proiect
 app.put('/api/projects/:id', async function (req, res) {
-    const project = await Project.findById(req.params.id);
-    if(project) {
-        project.title = req.body.title;
-        project.tech = req.body.tech;
-        project.done = req.body.done;
-        res.json(project);
+    try {
+        const updated = await Project.findByIdAndUpdate(
+            req.params.id,
+            { title: req.body.title, tech: req.body.tech, done: req.body.done },
+            { returnDocument: 'after' }
+        );
+        if (!updated) return res.status(404).json({ error: 'Not found' });
+        res.json(updated);
+    } catch (err) {
+        res.status(500).json({ error: 'Eroare ' + err });
     }
 });
+
 // Porneste serverul
 app.listen(PORT, function () {
     console.log('Server pornit pe http://localhost:' + PORT);

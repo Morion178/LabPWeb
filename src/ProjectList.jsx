@@ -5,6 +5,7 @@ function ProjectList() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [search, setSearch] = useState('');
+    const [editingId, setEditingId] = useState(null);
     useEffect(function () {
         fetch('http://localhost:3000/api/projects')
             .then(function (response) {
@@ -38,7 +39,7 @@ function ProjectList() {
                 return p.title.toLowerCase().includes(search.toLowerCase());
             }).map(function (item) {
                 return (
-                    <Card key={item._id} id={item._id} title={item.title} description={item.tech} />
+                    <Card key={item._id} id={item._id} title={item.title} description={item.tech} done={item.done} editingId={editingId} setEditingId={setEditingId} />
                 );
             })}
         </div>
