@@ -1,7 +1,8 @@
 nav {
  display: flex;
  gap: 15px;
- padding: 15px;
+ padding: 15px 20px;
+ margin: 0;
  background: #2C3E50;
 }
 nav a {

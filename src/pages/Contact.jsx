@@ -1,8 +1,7 @@
 import ContactForm from '../ContactForm.jsx';
 function Contact() {
  return (
- <div>
- <h2>Contact</h2>
+ <div style={{ width: '100%', margin: '0', padding: '0' }}>
  <ContactForm />
  </div>
  );

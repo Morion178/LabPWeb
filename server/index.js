@@ -40,6 +40,20 @@ app.get('/api/projects', async function (req, res) {
         res.status(500).json({ error: 'Eroare ' + err });
     }
 });
+// GET /api/stats - returneaza statistici despre proiecte
+app.get('/api/stats', async function(req, res) {
+    console.log('GET /api/stats called');
+    try {
+        const total = await Project.countDocuments();
+        const done = await Project.countDocuments({ done: true });
+        const pending = total - done;
+        console.log('Stats:', { total, done, pending });
+        res.json({ total, done, pending });
+    } catch (err) {
+        console.error('Error in /api/stats:', err);
+        res.status(500).json({ error: 'Eroare ' + err });
+    }
+});
 // GET /api/projects - returneaza toate proiectele
 // app.get('/api/projects/:id', function(req, res) {
 //  const project = projects.find(p => p.id === parseInt(req.params.id));
@@ -60,13 +74,6 @@ app.get('/api/projects/:_id', async function (req, res) {
         res.status(500).json({ error: 'Eroare ' + err });
     }
 });
-// GET /api/stats - returneaza statistici despre proiecte
-// app.get('/api/stats', function(req, res) {
-//  const total = projects.length;
-//  const done = projects.filter(p => p.done).length;
-//  const pending = total - done;
-//  res.json({ total, done, pending });
-// });
 // POST /api/projects - adauga un proiect nou
 // app.post('/api/projects', function(req, res) {
 //  const newProject = {
